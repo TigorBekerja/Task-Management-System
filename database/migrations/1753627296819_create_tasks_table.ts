@@ -11,7 +11,8 @@ export default class extends BaseSchema {
       table.text('description').nullable()
       table.string('category').notNullable()
       table.string('priority').notNullable()
-      table.timestamp('deadline').notNullable()
+      table.dateTime('deadline').notNullable()
+      
       table.timestamp('createdAt')
       table.timestamp('updatedAt')
     })
