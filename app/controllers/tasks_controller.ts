@@ -11,8 +11,10 @@ export default class TasksController {
         if (category) {
             query = query.where('category', category)
         }
-        if (priority) {
+        if (priority === 'low' || priority === 'medium' || priority === 'high') {
             query = query.where('priority', priority)
+        }else if (priority) {
+            return response.status(400).json({ message: 'Invalid priority value' })
         }
         if (deadline_from) {
             query = query.where('deadline', '>=', new Date(deadline_from))
