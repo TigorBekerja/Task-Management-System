@@ -1,5 +1,5 @@
 # Task Management System
-This project is a REST API for a Task Management System. It uses the AdonisJS framework and PostgreSQL.
+This project is a REST API for a Task Management System. It uses the AdonisJS framework and PostgreSQL. You can add a tasks, view a task (with filter and sort), update a task, and delete a task.
 ##  Base URL
 https://task-management-system-production-cdae.up.railway.app/
 ---
