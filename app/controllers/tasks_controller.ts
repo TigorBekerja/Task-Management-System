@@ -25,7 +25,7 @@ export default class TasksController {
 
         if (sort) {
             const [field, order] = sort.split(':')
-            if (!['title', 'priority', 'deadline', 'createdAt'].includes(field)) {
+            if (!['priority', 'deadline', 'createdAt'].includes(field)) {
                 return response.status(400).json({ message: 'Invalid sort field' })
             }
             if (field === 'priority') {
