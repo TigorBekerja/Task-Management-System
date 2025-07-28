@@ -32,7 +32,7 @@ export default class TasksController {
                 query = query.orderByRaw(`array_position(ARRAY['low', 'medium', 'high'], priority) ${order === 'asc' ? 'ASC' : 'DESC'}`)
             }
             
-            query = query.orderBy(field, order === 'asc' ? 'asc' : 'desc')
+            query = query.orderBy(field, order === 'desc' ? 'desc' : 'asc')
         } else {
             query = query.orderBy('id', 'asc')
         }
