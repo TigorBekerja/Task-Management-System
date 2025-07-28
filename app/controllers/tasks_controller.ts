@@ -47,7 +47,7 @@ export default class TasksController {
             const task = await Task.create(validatedData)
             return response.status(201).json(task)
         } catch (error) {
-            return response.status(400).json({ errors: error.messages })
+            return response.status(400).json({ message: 'invalid input' , errors: error.messages })
         }
     }
     
@@ -76,7 +76,7 @@ export default class TasksController {
     public async destroy({ params, response }: HttpContext) {
         const task = await Task.find(params.id)
         if (!task) {
-        return response.status(404).json({ message: 'Task not found' })
+            return response.status(404).json({ message: 'Task not found' })
         }
         
         await task.delete()
