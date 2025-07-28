@@ -4,6 +4,80 @@ This project is a REST API for a Task Management System. It uses the AdonisJS fr
 https://task-management-system-production-cdae.up.railway.app/
 ---
 
+## Setup Project Locally
+
+### 1. Prerequisites
+- [Node.js](https://nodejs.org/)
+- [PostgreSQL](https://www.postgresql.org/) 
+- NPM
+- Git
+
+---
+
+### 2. Clone Repository
+```bash
+git clone https://github.com/TigorBekerja/Task-Management-System
+cd <project-folder>
+```
+### 3. Install Dependencies
+```bash
+npm install
+```
+
+### 4. Configure Environment Variables
+Edit env and set your database credentials.
+```typescript
+PORT=8080
+HOST=0.0.0.0
+
+DB_HOST=127.0.0.1
+DB_PORT=5432
+DB_USER=postgres
+DB_PASSWORD="your_password"
+DB_DATABASE="your_database"
+```
+
+### 5. Run database migration
+```
+node ace migration:run
+```
+
+### 6. Start server
+```
+npm run dev
+```
+API will run at http://127.0.0.1:8080
+
+## Deployment to Railway
+### 1. deploy project to github
+### 2. Setup 
+2.1. Go to [Railway](https://railway.com/)
+
+2.2. Create a New Project → Deploy from GitHub Repo
+
+2.3. Create a New Project → Deploy PostgreSQL
+
+### 3. Configure Environment Variables
+Change the env in API project with new database credentials
+```
+DB_HOST="crossover.proxy.rlwy.net" (look at DATABASE_PUBLIC_URL)
+DB_PORT="36095" (look at DATABASE_PUBLIC_URL)
+DB_USER="postgres" (look at PGUSER)
+DB_PASSWORD="your_password" (look at PGPASSWORD)
+DB_DATABASE="railway" (look at PGDATABASE)
+
+```
+
+Example
+
+```
+postgresql://postgres:abcde@crossover.proxy.rlwy.net:12345/railway
+
+abcde is your password
+crossover.proxy.rlwy.net is your host
+12345 is your port
+```
+
 ##  Endpoints
 
 ###  Tasks
